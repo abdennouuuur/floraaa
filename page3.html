@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      background: linear-gradient(135deg, #f4f4f4, #e1e1e1); /* Subtle gradient background */
       text-align: center;
       display: flex;
       justify-content: center;
@@ -19,7 +19,7 @@
     }
     h1 {
       font-size: 3em;
-      color: #ff4081;
+      color: #4CAF50;
     }
     h2 {
       font-size: 1.5em;
@@ -32,7 +32,7 @@
       justify-content: center;
     }
     button {
-      background-color: #ff4081;
+      background-color: #4CAF50;
       color: white;
       border: none;
       padding: 20px 40px;
@@ -42,7 +42,7 @@
       transition: transform 0.3s ease, background-color 0.3s ease;
     }
     button:hover {
-      background-color: #f50057;
+      background-color: #45a049;
     }
     .yes-btn {
       transform: scale(1);
@@ -56,7 +56,7 @@
 </head>
 <body>
   <h1>All of this leads us to one thing...</h1>
-  <h2>Will you go out on a date with me?</h2>
+  <h2 id="question">Will you go out on a date with me?</h2>
   <div class="buttons">
     <button class="no-btn" id="no-btn">No</button>
     <button class="yes-btn" id="yes-btn" onclick="yesClicked()">Yes, of course!</button>
@@ -69,6 +69,7 @@
     };
 
     function yesClicked() {
+      document.getElementById('question').style.display = 'none';  // Hide the question
       document.querySelector('h2').textContent = "Great! Text me the date and place.";
       document.querySelector('.buttons').innerHTML = '';  // Remove buttons after clicking yes
     }
