@@ -1,0 +1,77 @@
+<!-- page3.html (Page 3) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Big Question</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff4081;
+    }
+    h2 {
+      font-size: 1.5em;
+      color: #333;
+    }
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+    button {
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      padding: 20px 40px;
+      font-size: 1.5em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #f50057;
+    }
+    .yes-btn {
+      transform: scale(1);
+      transition: transform 0.3s ease;
+    }
+    .no-btn {
+      transform: scale(1);
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1>All of this leads us to one thing...</h1>
+  <h2>Will you go out on a date with me?</h2>
+  <div class="buttons">
+    <button class="no-btn" id="no-btn">No</button>
+    <button class="yes-btn" id="yes-btn" onclick="yesClicked()">Yes, of course!</button>
+  </div>
+
+  <script>
+    document.getElementById('no-btn').onclick = function() {
+      this.style.transform = 'scale(0.8)';
+      document.getElementById('yes-btn').style.transform = 'scale(1.2)';
+    };
+
+    function yesClicked() {
+      document.querySelector('h2').textContent = "Great! Text me the date and place.";
+      document.querySelector('.buttons').innerHTML = '';  // Remove buttons after clicking yes
+    }
+  </script>
+</body>
+</html>
