@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #f4f4f4, #e1e1e1); /* Subtle gradient background */
+      background: linear-gradient(135deg, #fbe1e1, #f5f1e6); /* Beige with pink gradient */
       text-align: center;
       display: flex;
       justify-content: center;
@@ -32,7 +32,6 @@
       justify-content: center;
     }
     button {
-      background-color: #4CAF50;
       color: white;
       border: none;
       padding: 20px 40px;
@@ -41,8 +40,14 @@
       cursor: pointer;
       transition: transform 0.3s ease, background-color 0.3s ease;
     }
+    .no-btn {
+      background-color: #f44336;  /* Red */
+    }
+    .yes-btn {
+      background-color: #4CAF50;  /* Green */
+    }
     button:hover {
-      background-color: #45a049;
+      opacity: 0.8;
     }
     .yes-btn {
       transform: scale(1);
@@ -70,9 +75,10 @@
 
     function yesClicked() {
       document.getElementById('question').style.display = 'none';  // Hide the question
-      document.querySelector('h2').textContent = "Great! Text me the date and place.";
+      document.querySelector('h2').textContent = "Great! Text me the date and place.";  // Change message
       document.querySelector('.buttons').innerHTML = '';  // Remove buttons after clicking yes
     }
   </script>
 </body>
 </html>
+
